@@ -8,6 +8,7 @@ namespace DnDHelper {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Сводка для CharacterSheet
@@ -47,12 +48,15 @@ namespace DnDHelper {
 
 
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::ComboBox^ ClassCB;
 	protected:
-	private: System::Windows::Forms::ComboBox^ comboBox1;
+
 	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::ComboBox^ RaceCB;
+
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ NameBox;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::NumericUpDown^ LevelUpDown;
 
@@ -74,24 +78,42 @@ namespace DnDHelper {
 	private: System::Windows::Forms::Label^ charismaAdd;
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::TextBox^ MasterBonusText;
-	private: System::Windows::Forms::CheckBox^ checkBox1;
-	private: System::Windows::Forms::CheckBox^ checkBox2;
-	private: System::Windows::Forms::CheckBox^ checkBox3;
-	private: System::Windows::Forms::CheckBox^ checkBox4;
-	private: System::Windows::Forms::CheckBox^ checkBox5;
-	private: System::Windows::Forms::CheckBox^ checkBox6;
-	private: System::Windows::Forms::CheckBox^ checkBox7;
-	private: System::Windows::Forms::CheckBox^ checkBox8;
-	private: System::Windows::Forms::CheckBox^ checkBox9;
-	private: System::Windows::Forms::CheckBox^ checkBox10;
-	private: System::Windows::Forms::CheckBox^ checkBox11;
-	private: System::Windows::Forms::CheckBox^ checkBox12;
-	private: System::Windows::Forms::CheckBox^ checkBox13;
-	private: System::Windows::Forms::CheckBox^ checkBox14;
-	private: System::Windows::Forms::CheckBox^ checkBox15;
-	private: System::Windows::Forms::CheckBox^ checkBox16;
-	private: System::Windows::Forms::CheckBox^ checkBox17;
-	private: System::Windows::Forms::CheckBox^ checkBox18;
+	private: System::Windows::Forms::CheckBox^ Athl;
+	private: System::Windows::Forms::CheckBox^ Akr;
+	private: System::Windows::Forms::CheckBox^ HandDex;
+	private: System::Windows::Forms::CheckBox^ Stealth;
+	private: System::Windows::Forms::CheckBox^ Analisys;
+	private: System::Windows::Forms::CheckBox^ History;
+	private: System::Windows::Forms::CheckBox^ Magic;
+	private: System::Windows::Forms::CheckBox^ Nature;
+	private: System::Windows::Forms::CheckBox^ Religic;
+	private: System::Windows::Forms::CheckBox^ AnimCare;
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::CheckBox^ Pronic;
+
+	private: System::Windows::Forms::CheckBox^ Medic;
+
+	private: System::Windows::Forms::CheckBox^ Surviv;
+
+	private: System::Windows::Forms::CheckBox^ Attent;
+	private: System::Windows::Forms::CheckBox^ ubejd;
+
+
+	private: System::Windows::Forms::CheckBox^ lie;
+
+	private: System::Windows::Forms::CheckBox^ zapug;
+
+	private: System::Windows::Forms::CheckBox^ vistup;
+
 
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label8;
@@ -101,6 +123,32 @@ namespace DnDHelper {
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Button^ notesbutton;
 	private: System::Windows::Forms::Timer^ showOrNotNotes;
+	private: System::Windows::Forms::Button^ downloadButton;
+	private: System::Windows::Forms::Button^ uploadButton;
+	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+	private: System::Windows::Forms::TextBox^ MaxHP;
+	private: System::Windows::Forms::TextBox^ CurrentHP;
+	private: System::Windows::Forms::TextBox^ TempHP;
+	private: System::Windows::Forms::TextBox^ ArmorC;
+	private: System::Windows::Forms::TextBox^ Initiative;
+	private: System::Windows::Forms::CheckBox^ dG1;
+	private: System::Windows::Forms::CheckBox^ dG2;
+	private: System::Windows::Forms::CheckBox^ dG3;
+private: System::Windows::Forms::CheckBox^ dB3;
+private: System::Windows::Forms::CheckBox^ dB2;
+private: System::Windows::Forms::CheckBox^ dB1;
+private: System::Windows::Forms::TextBox^ copperC;
+private: System::Windows::Forms::TextBox^ silverC;
+private: System::Windows::Forms::TextBox^ goldC;
+private: System::Windows::Forms::TextBox^ platinumC;
+private: System::Windows::Forms::TextBox^ Notes;
+
+
+
+
+
+
 
 
 
@@ -145,33 +193,33 @@ namespace DnDHelper {
 			this->components = (gcnew System::ComponentModel::Container());
 			System::Windows::Forms::PictureBox^ pictureBox1;
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CharacterSheet::typeid));
-			System::Windows::Forms::TextBox^ textBox2;
-			System::Windows::Forms::TextBox^ textBox3;
-			System::Windows::Forms::TextBox^ textBox4;
-			System::Windows::Forms::TextBox^ textBox5;
 			System::Windows::Forms::Label^ label12;
-			System::Windows::Forms::TextBox^ textBox6;
 			System::Windows::Forms::Label^ label13;
 			System::Windows::Forms::Label^ label14;
 			System::Windows::Forms::Label^ label15;
-			System::Windows::Forms::CheckBox^ checkBox19;
-			System::Windows::Forms::CheckBox^ checkBox20;
-			System::Windows::Forms::CheckBox^ checkBox21;
-			System::Windows::Forms::CheckBox^ checkBox22;
-			System::Windows::Forms::CheckBox^ checkBox23;
-			System::Windows::Forms::CheckBox^ checkBox24;
 			System::Windows::Forms::PictureBox^ pictureBox2;
-			System::Windows::Forms::TextBox^ textBox7;
-			System::Windows::Forms::TextBox^ textBox8;
-			System::Windows::Forms::TextBox^ textBox9;
-			System::Windows::Forms::TextBox^ textBox10;
-			System::Windows::Forms::TextBox^ textBox11;
+			this->MaxHP = (gcnew System::Windows::Forms::TextBox());
+			this->CurrentHP = (gcnew System::Windows::Forms::TextBox());
+			this->TempHP = (gcnew System::Windows::Forms::TextBox());
+			this->ArmorC = (gcnew System::Windows::Forms::TextBox());
+			this->Initiative = (gcnew System::Windows::Forms::TextBox());
+			this->dG1 = (gcnew System::Windows::Forms::CheckBox());
+			this->dG2 = (gcnew System::Windows::Forms::CheckBox());
+			this->dG3 = (gcnew System::Windows::Forms::CheckBox());
+			this->dB3 = (gcnew System::Windows::Forms::CheckBox());
+			this->dB2 = (gcnew System::Windows::Forms::CheckBox());
+			this->dB1 = (gcnew System::Windows::Forms::CheckBox());
+			this->copperC = (gcnew System::Windows::Forms::TextBox());
+			this->silverC = (gcnew System::Windows::Forms::TextBox());
+			this->goldC = (gcnew System::Windows::Forms::TextBox());
+			this->platinumC = (gcnew System::Windows::Forms::TextBox());
+			this->Notes = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->ClassCB = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->RaceCB = (gcnew System::Windows::Forms::ComboBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->NameBox = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->LevelUpDown = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -191,24 +239,24 @@ namespace DnDHelper {
 			this->charismaAdd = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->MasterBonusText = (gcnew System::Windows::Forms::TextBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox5 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox6 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox7 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox8 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox9 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox10 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox11 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox12 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox13 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox14 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox15 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox16 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox17 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox18 = (gcnew System::Windows::Forms::CheckBox());
+			this->Athl = (gcnew System::Windows::Forms::CheckBox());
+			this->Akr = (gcnew System::Windows::Forms::CheckBox());
+			this->HandDex = (gcnew System::Windows::Forms::CheckBox());
+			this->Stealth = (gcnew System::Windows::Forms::CheckBox());
+			this->Analisys = (gcnew System::Windows::Forms::CheckBox());
+			this->History = (gcnew System::Windows::Forms::CheckBox());
+			this->Magic = (gcnew System::Windows::Forms::CheckBox());
+			this->Nature = (gcnew System::Windows::Forms::CheckBox());
+			this->Religic = (gcnew System::Windows::Forms::CheckBox());
+			this->AnimCare = (gcnew System::Windows::Forms::CheckBox());
+			this->Pronic = (gcnew System::Windows::Forms::CheckBox());
+			this->Medic = (gcnew System::Windows::Forms::CheckBox());
+			this->Surviv = (gcnew System::Windows::Forms::CheckBox());
+			this->Attent = (gcnew System::Windows::Forms::CheckBox());
+			this->ubejd = (gcnew System::Windows::Forms::CheckBox());
+			this->lie = (gcnew System::Windows::Forms::CheckBox());
+			this->zapug = (gcnew System::Windows::Forms::CheckBox());
+			this->vistup = (gcnew System::Windows::Forms::CheckBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
@@ -216,28 +264,16 @@ namespace DnDHelper {
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->notesbutton = (gcnew System::Windows::Forms::Button());
 			this->showOrNotNotes = (gcnew System::Windows::Forms::Timer(this->components));
+			this->downloadButton = (gcnew System::Windows::Forms::Button());
+			this->uploadButton = (gcnew System::Windows::Forms::Button());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			textBox2 = (gcnew System::Windows::Forms::TextBox());
-			textBox3 = (gcnew System::Windows::Forms::TextBox());
-			textBox4 = (gcnew System::Windows::Forms::TextBox());
-			textBox5 = (gcnew System::Windows::Forms::TextBox());
 			label12 = (gcnew System::Windows::Forms::Label());
-			textBox6 = (gcnew System::Windows::Forms::TextBox());
 			label13 = (gcnew System::Windows::Forms::Label());
 			label14 = (gcnew System::Windows::Forms::Label());
 			label15 = (gcnew System::Windows::Forms::Label());
-			checkBox19 = (gcnew System::Windows::Forms::CheckBox());
-			checkBox20 = (gcnew System::Windows::Forms::CheckBox());
-			checkBox21 = (gcnew System::Windows::Forms::CheckBox());
-			checkBox22 = (gcnew System::Windows::Forms::CheckBox());
-			checkBox23 = (gcnew System::Windows::Forms::CheckBox());
-			checkBox24 = (gcnew System::Windows::Forms::CheckBox());
 			pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
-			textBox7 = (gcnew System::Windows::Forms::TextBox());
-			textBox8 = (gcnew System::Windows::Forms::TextBox());
-			textBox9 = (gcnew System::Windows::Forms::TextBox());
-			textBox10 = (gcnew System::Windows::Forms::TextBox());
-			textBox11 = (gcnew System::Windows::Forms::TextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->LevelUpDown))->BeginInit();
@@ -259,48 +295,6 @@ namespace DnDHelper {
 			pictureBox1->TabIndex = 10;
 			pictureBox1->TabStop = false;
 			// 
-			// textBox2
-			// 
-			textBox2->Location = System::Drawing::Point(347, 211);
-			textBox2->Name = L"textBox2";
-			textBox2->Size = System::Drawing::Size(100, 20);
-			textBox2->TabIndex = 44;
-			textBox2->TabStop = false;
-			textBox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// textBox3
-			// 
-			textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			textBox3->Location = System::Drawing::Point(347, 241);
-			textBox3->Name = L"textBox3";
-			textBox3->Size = System::Drawing::Size(100, 44);
-			textBox3->TabIndex = 48;
-			textBox3->TabStop = false;
-			textBox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// textBox4
-			// 
-			textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			textBox4->Location = System::Drawing::Point(346, 300);
-			textBox4->Name = L"textBox4";
-			textBox4->Size = System::Drawing::Size(100, 44);
-			textBox4->TabIndex = 50;
-			textBox4->TabStop = false;
-			textBox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
-			// textBox5
-			// 
-			textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			textBox5->Location = System::Drawing::Point(473, 226);
-			textBox5->Name = L"textBox5";
-			textBox5->Size = System::Drawing::Size(100, 62);
-			textBox5->TabIndex = 52;
-			textBox5->TabStop = false;
-			textBox5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-			// 
 			// label12
 			// 
 			label12->AutoSize = true;
@@ -311,17 +305,6 @@ namespace DnDHelper {
 			label12->Size = System::Drawing::Size(135, 26);
 			label12->TabIndex = 53;
 			label12->Text = L"Инициатива";
-			// 
-			// textBox6
-			// 
-			textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			textBox6->Location = System::Drawing::Point(453, 410);
-			textBox6->Name = L"textBox6";
-			textBox6->Size = System::Drawing::Size(100, 62);
-			textBox6->TabIndex = 54;
-			textBox6->TabStop = false;
-			textBox6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// label13
 			// 
@@ -356,72 +339,6 @@ namespace DnDHelper {
 			label15->TabIndex = 57;
 			label15->Text = L"Провалы";
 			// 
-			// checkBox19
-			// 
-			checkBox19->AutoSize = true;
-			checkBox19->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			checkBox19->Location = System::Drawing::Point(443, 567);
-			checkBox19->Name = L"checkBox19";
-			checkBox19->Size = System::Drawing::Size(12, 11);
-			checkBox19->TabIndex = 58;
-			checkBox19->TabStop = false;
-			checkBox19->UseVisualStyleBackColor = true;
-			// 
-			// checkBox20
-			// 
-			checkBox20->AutoSize = true;
-			checkBox20->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			checkBox20->Location = System::Drawing::Point(473, 567);
-			checkBox20->Name = L"checkBox20";
-			checkBox20->Size = System::Drawing::Size(12, 11);
-			checkBox20->TabIndex = 59;
-			checkBox20->TabStop = false;
-			checkBox20->UseVisualStyleBackColor = true;
-			// 
-			// checkBox21
-			// 
-			checkBox21->AutoSize = true;
-			checkBox21->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			checkBox21->Location = System::Drawing::Point(503, 567);
-			checkBox21->Name = L"checkBox21";
-			checkBox21->Size = System::Drawing::Size(12, 11);
-			checkBox21->TabIndex = 60;
-			checkBox21->TabStop = false;
-			checkBox21->UseVisualStyleBackColor = true;
-			// 
-			// checkBox22
-			// 
-			checkBox22->AutoSize = true;
-			checkBox22->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			checkBox22->Location = System::Drawing::Point(503, 605);
-			checkBox22->Name = L"checkBox22";
-			checkBox22->Size = System::Drawing::Size(12, 11);
-			checkBox22->TabIndex = 63;
-			checkBox22->TabStop = false;
-			checkBox22->UseVisualStyleBackColor = true;
-			// 
-			// checkBox23
-			// 
-			checkBox23->AutoSize = true;
-			checkBox23->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			checkBox23->Location = System::Drawing::Point(473, 605);
-			checkBox23->Name = L"checkBox23";
-			checkBox23->Size = System::Drawing::Size(12, 11);
-			checkBox23->TabIndex = 62;
-			checkBox23->TabStop = false;
-			checkBox23->UseVisualStyleBackColor = true;
-			// 
-			// checkBox24
-			// 
-			checkBox24->AutoSize = true;
-			checkBox24->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			checkBox24->Location = System::Drawing::Point(443, 605);
-			checkBox24->Name = L"checkBox24";
-			checkBox24->Size = System::Drawing::Size(12, 11);
-			checkBox24->TabIndex = 61;
-			checkBox24->TabStop = false;
-			checkBox24->UseVisualStyleBackColor = true;
-			// 
 			// pictureBox2
 			// 
 			pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
@@ -432,57 +349,189 @@ namespace DnDHelper {
 			pictureBox2->TabIndex = 64;
 			pictureBox2->TabStop = false;
 			// 
-			// textBox7
+			// MaxHP
 			// 
-			textBox7->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			textBox7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->MaxHP->Location = System::Drawing::Point(347, 211);
+			this->MaxHP->Name = L"MaxHP";
+			this->MaxHP->Size = System::Drawing::Size(100, 20);
+			this->MaxHP->TabIndex = 44;
+			this->MaxHP->TabStop = false;
+			this->MaxHP->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// CurrentHP
+			// 
+			this->CurrentHP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			textBox7->Location = System::Drawing::Point(291, 740);
-			textBox7->Name = L"textBox7";
-			textBox7->Size = System::Drawing::Size(38, 25);
-			textBox7->TabIndex = 65;
-			textBox7->TabStop = false;
-			textBox7->Text = L"0";
-			textBox7->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->CurrentHP->Location = System::Drawing::Point(347, 241);
+			this->CurrentHP->Name = L"CurrentHP";
+			this->CurrentHP->Size = System::Drawing::Size(100, 44);
+			this->CurrentHP->TabIndex = 48;
+			this->CurrentHP->TabStop = false;
+			this->CurrentHP->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox8
+			// TempHP
 			// 
-			textBox8->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			textBox8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->TempHP->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			textBox8->Location = System::Drawing::Point(366, 740);
-			textBox8->Name = L"textBox8";
-			textBox8->Size = System::Drawing::Size(38, 25);
-			textBox8->TabIndex = 66;
-			textBox8->TabStop = false;
-			textBox8->Text = L"0";
-			textBox8->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->TempHP->Location = System::Drawing::Point(346, 300);
+			this->TempHP->Name = L"TempHP";
+			this->TempHP->Size = System::Drawing::Size(100, 44);
+			this->TempHP->TabIndex = 50;
+			this->TempHP->TabStop = false;
+			this->TempHP->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox9
+			// ArmorC
 			// 
-			textBox9->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			textBox9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ArmorC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			textBox9->Location = System::Drawing::Point(443, 740);
-			textBox9->Name = L"textBox9";
-			textBox9->Size = System::Drawing::Size(38, 25);
-			textBox9->TabIndex = 67;
-			textBox9->TabStop = false;
-			textBox9->Text = L"0";
-			textBox9->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->ArmorC->Location = System::Drawing::Point(473, 226);
+			this->ArmorC->Name = L"ArmorC";
+			this->ArmorC->Size = System::Drawing::Size(100, 62);
+			this->ArmorC->TabIndex = 52;
+			this->ArmorC->TabStop = false;
+			this->ArmorC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// textBox10
+			// Initiative
 			// 
-			textBox10->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			textBox10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Initiative->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 36, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			textBox10->Location = System::Drawing::Point(518, 739);
-			textBox10->Name = L"textBox10";
-			textBox10->Size = System::Drawing::Size(38, 25);
-			textBox10->TabIndex = 68;
-			textBox10->TabStop = false;
-			textBox10->Text = L"0";
-			textBox10->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->Initiative->Location = System::Drawing::Point(453, 410);
+			this->Initiative->Name = L"Initiative";
+			this->Initiative->Size = System::Drawing::Size(100, 62);
+			this->Initiative->TabIndex = 54;
+			this->Initiative->TabStop = false;
+			this->Initiative->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// dG1
+			// 
+			this->dG1->AutoSize = true;
+			this->dG1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dG1->Location = System::Drawing::Point(443, 567);
+			this->dG1->Name = L"dG1";
+			this->dG1->Size = System::Drawing::Size(12, 11);
+			this->dG1->TabIndex = 58;
+			this->dG1->TabStop = false;
+			this->dG1->UseVisualStyleBackColor = true;
+			// 
+			// dG2
+			// 
+			this->dG2->AutoSize = true;
+			this->dG2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dG2->Location = System::Drawing::Point(473, 567);
+			this->dG2->Name = L"dG2";
+			this->dG2->Size = System::Drawing::Size(12, 11);
+			this->dG2->TabIndex = 59;
+			this->dG2->TabStop = false;
+			this->dG2->UseVisualStyleBackColor = true;
+			// 
+			// dG3
+			// 
+			this->dG3->AutoSize = true;
+			this->dG3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dG3->Location = System::Drawing::Point(503, 567);
+			this->dG3->Name = L"dG3";
+			this->dG3->Size = System::Drawing::Size(12, 11);
+			this->dG3->TabIndex = 60;
+			this->dG3->TabStop = false;
+			this->dG3->UseVisualStyleBackColor = true;
+			// 
+			// dB3
+			// 
+			this->dB3->AutoSize = true;
+			this->dB3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dB3->Location = System::Drawing::Point(503, 605);
+			this->dB3->Name = L"dB3";
+			this->dB3->Size = System::Drawing::Size(12, 11);
+			this->dB3->TabIndex = 63;
+			this->dB3->TabStop = false;
+			this->dB3->UseVisualStyleBackColor = true;
+			// 
+			// dB2
+			// 
+			this->dB2->AutoSize = true;
+			this->dB2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dB2->Location = System::Drawing::Point(473, 605);
+			this->dB2->Name = L"dB2";
+			this->dB2->Size = System::Drawing::Size(12, 11);
+			this->dB2->TabIndex = 62;
+			this->dB2->TabStop = false;
+			this->dB2->UseVisualStyleBackColor = true;
+			// 
+			// dB1
+			// 
+			this->dB1->AutoSize = true;
+			this->dB1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dB1->Location = System::Drawing::Point(443, 605);
+			this->dB1->Name = L"dB1";
+			this->dB1->Size = System::Drawing::Size(12, 11);
+			this->dB1->TabIndex = 61;
+			this->dB1->TabStop = false;
+			this->dB1->UseVisualStyleBackColor = true;
+			// 
+			// copperC
+			// 
+			this->copperC->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->copperC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->copperC->Location = System::Drawing::Point(291, 740);
+			this->copperC->Name = L"copperC";
+			this->copperC->Size = System::Drawing::Size(38, 25);
+			this->copperC->TabIndex = 65;
+			this->copperC->TabStop = false;
+			this->copperC->Text = L"0";
+			this->copperC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// silverC
+			// 
+			this->silverC->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->silverC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->silverC->Location = System::Drawing::Point(366, 740);
+			this->silverC->Name = L"silverC";
+			this->silverC->Size = System::Drawing::Size(38, 25);
+			this->silverC->TabIndex = 66;
+			this->silverC->TabStop = false;
+			this->silverC->Text = L"0";
+			this->silverC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// goldC
+			// 
+			this->goldC->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->goldC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->goldC->Location = System::Drawing::Point(443, 740);
+			this->goldC->Name = L"goldC";
+			this->goldC->Size = System::Drawing::Size(38, 25);
+			this->goldC->TabIndex = 67;
+			this->goldC->TabStop = false;
+			this->goldC->Text = L"0";
+			this->goldC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// platinumC
+			// 
+			this->platinumC->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->platinumC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->platinumC->Location = System::Drawing::Point(518, 739);
+			this->platinumC->Name = L"platinumC";
+			this->platinumC->Size = System::Drawing::Size(38, 25);
+			this->platinumC->TabIndex = 68;
+			this->platinumC->TabStop = false;
+			this->platinumC->Text = L"0";
+			this->platinumC->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// Notes
+			// 
+			this->Notes->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Notes->Location = System::Drawing::Point(628, 31);
+			this->Notes->MaximumSize = System::Drawing::Size(332, 750);
+			this->Notes->Multiline = true;
+			this->Notes->Name = L"Notes";
+			this->Notes->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->Notes->Size = System::Drawing::Size(332, 750);
+			this->Notes->TabIndex = 70;
+			this->Notes->TabStop = false;
 			// 
 			// label1
 			// 
@@ -495,21 +544,21 @@ namespace DnDHelper {
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Класс";
 			// 
-			// comboBox1
+			// ClassCB
 			// 
-			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->ClassCB->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->ClassCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
-				L"Варвар", L"Бард", L"Жрец", L"Друид", L"Воин",
-					L"Монах", L"Палладин", L"Следопыт", L"Плут", L"Чародей", L"Колдун", L"Волшебник"
+			this->ClassCB->FormattingEnabled = true;
+			this->ClassCB->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"Варвар", L"Бард", L"Жрец", L"Друид", L"Воин", L"Монах",
+					L"Палладин", L"Следопыт", L"Плут", L"Чародей", L"Колдун", L"Волшебник"
 			});
-			this->comboBox1->Location = System::Drawing::Point(92, 125);
-			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(233, 33);
-			this->comboBox1->TabIndex = 1;
-			this->comboBox1->TabStop = false;
+			this->ClassCB->Location = System::Drawing::Point(92, 125);
+			this->ClassCB->Name = L"ClassCB";
+			this->ClassCB->Size = System::Drawing::Size(233, 33);
+			this->ClassCB->TabIndex = 1;
+			this->ClassCB->TabStop = false;
 			// 
 			// label2
 			// 
@@ -522,21 +571,21 @@ namespace DnDHelper {
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Раса";
 			// 
-			// comboBox2
+			// RaceCB
 			// 
-			this->comboBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->RaceCB->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->RaceCB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->comboBox2->FormattingEnabled = true;
-			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(9) {
+			this->RaceCB->FormattingEnabled = true;
+			this->RaceCB->Items->AddRange(gcnew cli::array< System::Object^  >(9) {
 				L"Дварф", L"Эльф", L"Полурослик", L"Человек", L"Драконорожденный",
 					L"Гном", L"Полуэльф", L"Полуорк", L"Тифлинг"
 			});
-			this->comboBox2->Location = System::Drawing::Point(92, 80);
-			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(233, 33);
-			this->comboBox2->TabIndex = 3;
-			this->comboBox2->TabStop = false;
+			this->RaceCB->Location = System::Drawing::Point(92, 80);
+			this->RaceCB->Name = L"RaceCB";
+			this->RaceCB->Size = System::Drawing::Size(233, 33);
+			this->RaceCB->TabIndex = 3;
+			this->RaceCB->TabStop = false;
 			// 
 			// label3
 			// 
@@ -549,16 +598,16 @@ namespace DnDHelper {
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Имя";
 			// 
-			// textBox1
+			// NameBox
 			// 
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->NameBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->NameBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox1->Location = System::Drawing::Point(92, 20);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(488, 32);
-			this->textBox1->TabIndex = 5;
-			this->textBox1->TabStop = false;
+			this->NameBox->Location = System::Drawing::Point(92, 20);
+			this->NameBox->Name = L"NameBox";
+			this->NameBox->Size = System::Drawing::Size(393, 32);
+			this->NameBox->TabIndex = 5;
+			this->NameBox->TabStop = false;
 			// 
 			// label4
 			// 
@@ -796,203 +845,203 @@ namespace DnDHelper {
 			this->MasterBonusText->TabStop = false;
 			this->MasterBonusText->Text = L"+2";
 			// 
-			// checkBox1
+			// Athl
 			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox1->Location = System::Drawing::Point(163, 179);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(70, 17);
-			this->checkBox1->TabIndex = 25;
-			this->checkBox1->Text = L"Атлетика";
-			this->checkBox1->UseVisualStyleBackColor = true;
+			this->Athl->AutoSize = true;
+			this->Athl->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Athl->Location = System::Drawing::Point(163, 179);
+			this->Athl->Name = L"Athl";
+			this->Athl->Size = System::Drawing::Size(70, 17);
+			this->Athl->TabIndex = 25;
+			this->Athl->Text = L"Атлетика";
+			this->Athl->UseVisualStyleBackColor = true;
 			// 
-			// checkBox2
+			// Akr
 			// 
-			this->checkBox2->AutoSize = true;
-			this->checkBox2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox2->Location = System::Drawing::Point(163, 283);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(83, 17);
-			this->checkBox2->TabIndex = 26;
-			this->checkBox2->Text = L"Акробатика";
-			this->checkBox2->UseVisualStyleBackColor = true;
+			this->Akr->AutoSize = true;
+			this->Akr->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Akr->Location = System::Drawing::Point(163, 283);
+			this->Akr->Name = L"Akr";
+			this->Akr->Size = System::Drawing::Size(83, 17);
+			this->Akr->TabIndex = 26;
+			this->Akr->Text = L"Акробатика";
+			this->Akr->UseVisualStyleBackColor = true;
 			// 
-			// checkBox3
+			// HandDex
 			// 
-			this->checkBox3->AutoSize = true;
-			this->checkBox3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox3->Location = System::Drawing::Point(163, 315);
-			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(93, 17);
-			this->checkBox3->TabIndex = 27;
-			this->checkBox3->Text = L"Ловкость Рук";
-			this->checkBox3->UseVisualStyleBackColor = true;
+			this->HandDex->AutoSize = true;
+			this->HandDex->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->HandDex->Location = System::Drawing::Point(163, 315);
+			this->HandDex->Name = L"HandDex";
+			this->HandDex->Size = System::Drawing::Size(93, 17);
+			this->HandDex->TabIndex = 27;
+			this->HandDex->Text = L"Ловкость Рук";
+			this->HandDex->UseVisualStyleBackColor = true;
 			// 
-			// checkBox4
+			// Stealth
 			// 
-			this->checkBox4->AutoSize = true;
-			this->checkBox4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox4->Location = System::Drawing::Point(163, 344);
-			this->checkBox4->Name = L"checkBox4";
-			this->checkBox4->Size = System::Drawing::Size(84, 17);
-			this->checkBox4->TabIndex = 28;
-			this->checkBox4->Text = L"Скрытность";
-			this->checkBox4->UseVisualStyleBackColor = true;
+			this->Stealth->AutoSize = true;
+			this->Stealth->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Stealth->Location = System::Drawing::Point(163, 344);
+			this->Stealth->Name = L"Stealth";
+			this->Stealth->Size = System::Drawing::Size(84, 17);
+			this->Stealth->TabIndex = 28;
+			this->Stealth->Text = L"Скрытность";
+			this->Stealth->UseVisualStyleBackColor = true;
 			// 
-			// checkBox5
+			// Analisys
 			// 
-			this->checkBox5->AutoSize = true;
-			this->checkBox5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox5->Location = System::Drawing::Point(163, 482);
-			this->checkBox5->Name = L"checkBox5";
-			this->checkBox5->Size = System::Drawing::Size(60, 17);
-			this->checkBox5->TabIndex = 29;
-			this->checkBox5->Text = L"Анализ";
-			this->checkBox5->UseVisualStyleBackColor = true;
+			this->Analisys->AutoSize = true;
+			this->Analisys->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Analisys->Location = System::Drawing::Point(163, 482);
+			this->Analisys->Name = L"Analisys";
+			this->Analisys->Size = System::Drawing::Size(60, 17);
+			this->Analisys->TabIndex = 29;
+			this->Analisys->Text = L"Анализ";
+			this->Analisys->UseVisualStyleBackColor = true;
 			// 
-			// checkBox6
+			// History
 			// 
-			this->checkBox6->AutoSize = true;
-			this->checkBox6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox6->Location = System::Drawing::Point(163, 499);
-			this->checkBox6->Name = L"checkBox6";
-			this->checkBox6->Size = System::Drawing::Size(66, 17);
-			this->checkBox6->TabIndex = 30;
-			this->checkBox6->Text = L"История";
-			this->checkBox6->UseVisualStyleBackColor = true;
+			this->History->AutoSize = true;
+			this->History->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->History->Location = System::Drawing::Point(163, 499);
+			this->History->Name = L"History";
+			this->History->Size = System::Drawing::Size(66, 17);
+			this->History->TabIndex = 30;
+			this->History->Text = L"История";
+			this->History->UseVisualStyleBackColor = true;
 			// 
-			// checkBox7
+			// Magic
 			// 
-			this->checkBox7->AutoSize = true;
-			this->checkBox7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox7->Location = System::Drawing::Point(163, 514);
-			this->checkBox7->Name = L"checkBox7";
-			this->checkBox7->Size = System::Drawing::Size(55, 17);
-			this->checkBox7->TabIndex = 31;
-			this->checkBox7->Text = L"Магия";
-			this->checkBox7->UseVisualStyleBackColor = true;
+			this->Magic->AutoSize = true;
+			this->Magic->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Magic->Location = System::Drawing::Point(163, 514);
+			this->Magic->Name = L"Magic";
+			this->Magic->Size = System::Drawing::Size(55, 17);
+			this->Magic->TabIndex = 31;
+			this->Magic->Text = L"Магия";
+			this->Magic->UseVisualStyleBackColor = true;
 			// 
-			// checkBox8
+			// Nature
 			// 
-			this->checkBox8->AutoSize = true;
-			this->checkBox8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox8->Location = System::Drawing::Point(163, 530);
-			this->checkBox8->Name = L"checkBox8";
-			this->checkBox8->Size = System::Drawing::Size(67, 17);
-			this->checkBox8->TabIndex = 32;
-			this->checkBox8->Text = L"Природа";
-			this->checkBox8->UseVisualStyleBackColor = true;
+			this->Nature->AutoSize = true;
+			this->Nature->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Nature->Location = System::Drawing::Point(163, 530);
+			this->Nature->Name = L"Nature";
+			this->Nature->Size = System::Drawing::Size(67, 17);
+			this->Nature->TabIndex = 32;
+			this->Nature->Text = L"Природа";
+			this->Nature->UseVisualStyleBackColor = true;
 			// 
-			// checkBox9
+			// Religic
 			// 
-			this->checkBox9->AutoSize = true;
-			this->checkBox9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox9->Location = System::Drawing::Point(163, 544);
-			this->checkBox9->Name = L"checkBox9";
-			this->checkBox9->Size = System::Drawing::Size(65, 17);
-			this->checkBox9->TabIndex = 33;
-			this->checkBox9->Text = L"Религия";
-			this->checkBox9->UseVisualStyleBackColor = true;
+			this->Religic->AutoSize = true;
+			this->Religic->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Religic->Location = System::Drawing::Point(163, 544);
+			this->Religic->Name = L"Religic";
+			this->Religic->Size = System::Drawing::Size(65, 17);
+			this->Religic->TabIndex = 33;
+			this->Religic->Text = L"Религия";
+			this->Religic->UseVisualStyleBackColor = true;
 			// 
-			// checkBox10
+			// AnimCare
 			// 
-			this->checkBox10->AutoSize = true;
-			this->checkBox10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox10->Location = System::Drawing::Point(163, 644);
-			this->checkBox10->Name = L"checkBox10";
-			this->checkBox10->Size = System::Drawing::Size(128, 17);
-			this->checkBox10->TabIndex = 38;
-			this->checkBox10->Text = L"Уход за Животными";
-			this->checkBox10->UseVisualStyleBackColor = true;
+			this->AnimCare->AutoSize = true;
+			this->AnimCare->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->AnimCare->Location = System::Drawing::Point(163, 644);
+			this->AnimCare->Name = L"AnimCare";
+			this->AnimCare->Size = System::Drawing::Size(128, 17);
+			this->AnimCare->TabIndex = 38;
+			this->AnimCare->Text = L"Уход за Животными";
+			this->AnimCare->UseVisualStyleBackColor = true;
 			// 
-			// checkBox11
+			// Pronic
 			// 
-			this->checkBox11->AutoSize = true;
-			this->checkBox11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox11->Location = System::Drawing::Point(163, 630);
-			this->checkBox11->Name = L"checkBox11";
-			this->checkBox11->Size = System::Drawing::Size(119, 17);
-			this->checkBox11->TabIndex = 37;
-			this->checkBox11->Text = L"Проницательность";
-			this->checkBox11->UseVisualStyleBackColor = true;
+			this->Pronic->AutoSize = true;
+			this->Pronic->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Pronic->Location = System::Drawing::Point(163, 630);
+			this->Pronic->Name = L"Pronic";
+			this->Pronic->Size = System::Drawing::Size(119, 17);
+			this->Pronic->TabIndex = 37;
+			this->Pronic->Text = L"Проницательность";
+			this->Pronic->UseVisualStyleBackColor = true;
 			// 
-			// checkBox12
+			// Medic
 			// 
-			this->checkBox12->AutoSize = true;
-			this->checkBox12->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox12->Location = System::Drawing::Point(163, 614);
-			this->checkBox12->Name = L"checkBox12";
-			this->checkBox12->Size = System::Drawing::Size(74, 17);
-			this->checkBox12->TabIndex = 36;
-			this->checkBox12->Text = L"Медицина";
-			this->checkBox12->UseVisualStyleBackColor = true;
+			this->Medic->AutoSize = true;
+			this->Medic->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Medic->Location = System::Drawing::Point(163, 614);
+			this->Medic->Name = L"Medic";
+			this->Medic->Size = System::Drawing::Size(74, 17);
+			this->Medic->TabIndex = 36;
+			this->Medic->Text = L"Медицина";
+			this->Medic->UseVisualStyleBackColor = true;
 			// 
-			// checkBox13
+			// Surviv
 			// 
-			this->checkBox13->AutoSize = true;
-			this->checkBox13->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox13->Location = System::Drawing::Point(163, 599);
-			this->checkBox13->Name = L"checkBox13";
-			this->checkBox13->Size = System::Drawing::Size(82, 17);
-			this->checkBox13->TabIndex = 35;
-			this->checkBox13->Text = L"Выживание";
-			this->checkBox13->UseVisualStyleBackColor = true;
+			this->Surviv->AutoSize = true;
+			this->Surviv->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Surviv->Location = System::Drawing::Point(163, 599);
+			this->Surviv->Name = L"Surviv";
+			this->Surviv->Size = System::Drawing::Size(82, 17);
+			this->Surviv->TabIndex = 35;
+			this->Surviv->Text = L"Выживание";
+			this->Surviv->UseVisualStyleBackColor = true;
 			// 
-			// checkBox14
+			// Attent
 			// 
-			this->checkBox14->AutoSize = true;
-			this->checkBox14->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox14->Location = System::Drawing::Point(163, 582);
-			this->checkBox14->Name = L"checkBox14";
-			this->checkBox14->Size = System::Drawing::Size(108, 17);
-			this->checkBox14->TabIndex = 34;
-			this->checkBox14->Text = L"Внимательность";
-			this->checkBox14->UseVisualStyleBackColor = true;
+			this->Attent->AutoSize = true;
+			this->Attent->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Attent->Location = System::Drawing::Point(163, 582);
+			this->Attent->Name = L"Attent";
+			this->Attent->Size = System::Drawing::Size(108, 17);
+			this->Attent->TabIndex = 34;
+			this->Attent->Text = L"Внимательность";
+			this->Attent->UseVisualStyleBackColor = true;
 			// 
-			// checkBox15
+			// ubejd
 			// 
-			this->checkBox15->AutoSize = true;
-			this->checkBox15->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox15->Location = System::Drawing::Point(163, 730);
-			this->checkBox15->Name = L"checkBox15";
-			this->checkBox15->Size = System::Drawing::Size(81, 17);
-			this->checkBox15->TabIndex = 42;
-			this->checkBox15->Text = L"Убеждение";
-			this->checkBox15->UseVisualStyleBackColor = true;
+			this->ubejd->AutoSize = true;
+			this->ubejd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ubejd->Location = System::Drawing::Point(163, 730);
+			this->ubejd->Name = L"ubejd";
+			this->ubejd->Size = System::Drawing::Size(81, 17);
+			this->ubejd->TabIndex = 42;
+			this->ubejd->Text = L"Убеждение";
+			this->ubejd->UseVisualStyleBackColor = true;
 			// 
-			// checkBox16
+			// lie
 			// 
-			this->checkBox16->AutoSize = true;
-			this->checkBox16->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox16->Location = System::Drawing::Point(163, 714);
-			this->checkBox16->Name = L"checkBox16";
-			this->checkBox16->Size = System::Drawing::Size(57, 17);
-			this->checkBox16->TabIndex = 41;
-			this->checkBox16->Text = L"Обман";
-			this->checkBox16->UseVisualStyleBackColor = true;
+			this->lie->AutoSize = true;
+			this->lie->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->lie->Location = System::Drawing::Point(163, 714);
+			this->lie->Name = L"lie";
+			this->lie->Size = System::Drawing::Size(57, 17);
+			this->lie->TabIndex = 41;
+			this->lie->Text = L"Обман";
+			this->lie->UseVisualStyleBackColor = true;
 			// 
-			// checkBox17
+			// zapug
 			// 
-			this->checkBox17->AutoSize = true;
-			this->checkBox17->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox17->Location = System::Drawing::Point(163, 699);
-			this->checkBox17->Name = L"checkBox17";
-			this->checkBox17->Size = System::Drawing::Size(88, 17);
-			this->checkBox17->TabIndex = 40;
-			this->checkBox17->Text = L"Запугивание";
-			this->checkBox17->UseVisualStyleBackColor = true;
+			this->zapug->AutoSize = true;
+			this->zapug->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->zapug->Location = System::Drawing::Point(163, 699);
+			this->zapug->Name = L"zapug";
+			this->zapug->Size = System::Drawing::Size(88, 17);
+			this->zapug->TabIndex = 40;
+			this->zapug->Text = L"Запугивание";
+			this->zapug->UseVisualStyleBackColor = true;
 			// 
-			// checkBox18
+			// vistup
 			// 
-			this->checkBox18->AutoSize = true;
-			this->checkBox18->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->checkBox18->Location = System::Drawing::Point(163, 682);
-			this->checkBox18->Name = L"checkBox18";
-			this->checkBox18->Size = System::Drawing::Size(90, 17);
-			this->checkBox18->TabIndex = 39;
-			this->checkBox18->Text = L"Выступление";
-			this->checkBox18->UseVisualStyleBackColor = true;
+			this->vistup->AutoSize = true;
+			this->vistup->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->vistup->Location = System::Drawing::Point(163, 682);
+			this->vistup->Name = L"vistup";
+			this->vistup->Size = System::Drawing::Size(90, 17);
+			this->vistup->TabIndex = 39;
+			this->vistup->Text = L"Выступление";
+			this->vistup->UseVisualStyleBackColor = true;
 			// 
 			// label7
 			// 
@@ -1065,69 +1114,99 @@ namespace DnDHelper {
 			this->showOrNotNotes->Interval = 1;
 			this->showOrNotNotes->Tick += gcnew System::EventHandler(this, &CharacterSheet::showOrNotNotes_Tick);
 			// 
-			// textBox11
+			// downloadButton
 			// 
-			textBox11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			textBox11->Location = System::Drawing::Point(628, 31);
-			textBox11->MaximumSize = System::Drawing::Size(332, 750);
-			textBox11->Multiline = true;
-			textBox11->Name = L"textBox11";
-			textBox11->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			textBox11->Size = System::Drawing::Size(332, 750);
-			textBox11->TabIndex = 70;
-			textBox11->TabStop = false;
+			this->downloadButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"downloadButton.BackgroundImage")));
+			this->downloadButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->downloadButton->FlatAppearance->BorderSize = 0;
+			this->downloadButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->downloadButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+			this->downloadButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->downloadButton->Location = System::Drawing::Point(494, 20);
+			this->downloadButton->Name = L"downloadButton";
+			this->downloadButton->Size = System::Drawing::Size(35, 35);
+			this->downloadButton->TabIndex = 71;
+			this->downloadButton->UseVisualStyleBackColor = true;
+			this->downloadButton->Click += gcnew System::EventHandler(this, &CharacterSheet::downloadButton_Click);
+			// 
+			// uploadButton
+			// 
+			this->uploadButton->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"uploadButton.BackgroundImage")));
+			this->uploadButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->uploadButton->FlatAppearance->BorderSize = 0;
+			this->uploadButton->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Transparent;
+			this->uploadButton->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Transparent;
+			this->uploadButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->uploadButton->Location = System::Drawing::Point(538, 18);
+			this->uploadButton->Name = L"uploadButton";
+			this->uploadButton->Size = System::Drawing::Size(35, 37);
+			this->uploadButton->TabIndex = 72;
+			this->uploadButton->UseVisualStyleBackColor = true;
+			this->uploadButton->Click += gcnew System::EventHandler(this, &CharacterSheet::uploadButton_Click);
+			// 
+			// saveFileDialog1
+			// 
+			this->saveFileDialog1->DefaultExt = L"txt";
+			this->saveFileDialog1->Filter = L"character file (*.character)|*.character|Все файлы (*.*)|*.*";
+			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->DefaultExt = L"txt";
+			this->openFileDialog1->FileName = L"openFileDialog1";
+			this->openFileDialog1->Filter = L"character file (*.character)|*.character|Все файлы (*.*)|*.*";
 			// 
 			// CharacterSheet
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(592, 807);
-			this->Controls->Add(textBox11);
+			this->Controls->Add(this->uploadButton);
+			this->Controls->Add(this->downloadButton);
+			this->Controls->Add(this->Notes);
 			this->Controls->Add(this->notesbutton);
-			this->Controls->Add(textBox10);
-			this->Controls->Add(textBox9);
-			this->Controls->Add(textBox8);
-			this->Controls->Add(textBox7);
+			this->Controls->Add(this->platinumC);
+			this->Controls->Add(this->goldC);
+			this->Controls->Add(this->silverC);
+			this->Controls->Add(this->copperC);
 			this->Controls->Add(pictureBox2);
-			this->Controls->Add(checkBox22);
-			this->Controls->Add(checkBox23);
-			this->Controls->Add(checkBox24);
-			this->Controls->Add(checkBox21);
-			this->Controls->Add(checkBox20);
-			this->Controls->Add(checkBox19);
+			this->Controls->Add(this->dB3);
+			this->Controls->Add(this->dB2);
+			this->Controls->Add(this->dB1);
+			this->Controls->Add(this->dG3);
+			this->Controls->Add(this->dG2);
+			this->Controls->Add(this->dG1);
 			this->Controls->Add(label15);
 			this->Controls->Add(label14);
 			this->Controls->Add(label13);
-			this->Controls->Add(textBox6);
+			this->Controls->Add(this->Initiative);
 			this->Controls->Add(label12);
-			this->Controls->Add(textBox5);
+			this->Controls->Add(this->ArmorC);
 			this->Controls->Add(this->label11);
-			this->Controls->Add(textBox4);
+			this->Controls->Add(this->TempHP);
 			this->Controls->Add(this->label10);
-			this->Controls->Add(textBox3);
+			this->Controls->Add(this->CurrentHP);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label7);
-			this->Controls->Add(textBox2);
-			this->Controls->Add(this->checkBox15);
-			this->Controls->Add(this->checkBox16);
-			this->Controls->Add(this->checkBox17);
-			this->Controls->Add(this->checkBox18);
-			this->Controls->Add(this->checkBox10);
-			this->Controls->Add(this->checkBox11);
-			this->Controls->Add(this->checkBox12);
-			this->Controls->Add(this->checkBox13);
-			this->Controls->Add(this->checkBox14);
-			this->Controls->Add(this->checkBox9);
-			this->Controls->Add(this->checkBox8);
-			this->Controls->Add(this->checkBox7);
-			this->Controls->Add(this->checkBox6);
-			this->Controls->Add(this->checkBox5);
-			this->Controls->Add(this->checkBox4);
-			this->Controls->Add(this->checkBox3);
-			this->Controls->Add(this->checkBox2);
-			this->Controls->Add(this->checkBox1);
+			this->Controls->Add(this->MaxHP);
+			this->Controls->Add(this->ubejd);
+			this->Controls->Add(this->lie);
+			this->Controls->Add(this->zapug);
+			this->Controls->Add(this->vistup);
+			this->Controls->Add(this->AnimCare);
+			this->Controls->Add(this->Pronic);
+			this->Controls->Add(this->Medic);
+			this->Controls->Add(this->Surviv);
+			this->Controls->Add(this->Attent);
+			this->Controls->Add(this->Religic);
+			this->Controls->Add(this->Nature);
+			this->Controls->Add(this->Magic);
+			this->Controls->Add(this->History);
+			this->Controls->Add(this->Analisys);
+			this->Controls->Add(this->Stealth);
+			this->Controls->Add(this->HandDex);
+			this->Controls->Add(this->Akr);
+			this->Controls->Add(this->Athl);
 			this->Controls->Add(this->MasterBonusText);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->charismaAdd);
@@ -1147,12 +1226,13 @@ namespace DnDHelper {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->LevelUpDown);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->NameBox);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->comboBox2);
+			this->Controls->Add(this->RaceCB);
 			this->Controls->Add(this->label2);
-			this->Controls->Add(this->comboBox1);
+			this->Controls->Add(this->ClassCB);
 			this->Controls->Add(this->label1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"CharacterSheet";
 			this->Text = L"CharacterSheet";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &CharacterSheet::CharacterSheet_FormClosing);
@@ -1429,7 +1509,7 @@ namespace DnDHelper {
 	}
 
 	private: System::Void CharacterSheet_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
-		System::Windows::Forms::DialogResult dlgRes = MessageBox::Show("Вы точно хотите закрыть лист персонажа? Данные не сохранятся.", "", MessageBoxButtons::YesNo);
+		System::Windows::Forms::DialogResult dlgRes = MessageBox::Show("Вы точно хотите закрыть лист персонажа? Данные не сохраняются автоматически.", "", MessageBoxButtons::YesNo);
 
 		if (dlgRes == System::Windows::Forms::DialogResult::No)
 			e->Cancel = true;
@@ -1449,5 +1529,7 @@ namespace DnDHelper {
 			showOrNotNotes->Stop();
 		}
 	}
+	private: System::Void downloadButton_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void uploadButton_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }
