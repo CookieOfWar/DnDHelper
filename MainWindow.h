@@ -69,13 +69,14 @@ namespace DnDHelper {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainWindow::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->QuitButton = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->PlayerButton = (gcnew System::Windows::Forms::Button());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->DMButton = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->QuitButton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -92,6 +93,23 @@ namespace DnDHelper {
 			this->panel1->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &MainWindow::panel1_MouseDown);
 			this->panel1->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &MainWindow::panel1_MouseMove);
 			this->panel1->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MainWindow::panel1_MouseUp);
+			// 
+			// QuitButton
+			// 
+			this->QuitButton->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
+			this->QuitButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+				static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->QuitButton->FlatAppearance->BorderSize = 0;
+			this->QuitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->QuitButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 5, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->QuitButton->Location = System::Drawing::Point(253, 0);
+			this->QuitButton->Name = L"QuitButton";
+			this->QuitButton->Size = System::Drawing::Size(39, 17);
+			this->QuitButton->TabIndex = 1;
+			this->QuitButton->Text = L"X";
+			this->QuitButton->UseVisualStyleBackColor = false;
+			this->QuitButton->Click += gcnew System::EventHandler(this, &MainWindow::QuitButton_Click);
 			// 
 			// button1
 			// 
@@ -165,23 +183,6 @@ namespace DnDHelper {
 			this->label1->TabIndex = 6;
 			this->label1->Text = L"Èíñòð ÄÌ";
 			// 
-			// QuitButton
-			// 
-			this->QuitButton->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->QuitButton->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
-				static_cast<System::Int32>(static_cast<System::Byte>(128)));
-			this->QuitButton->FlatAppearance->BorderSize = 0;
-			this->QuitButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->QuitButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 5, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->QuitButton->Location = System::Drawing::Point(253, 0);
-			this->QuitButton->Name = L"QuitButton";
-			this->QuitButton->Size = System::Drawing::Size(39, 17);
-			this->QuitButton->TabIndex = 1;
-			this->QuitButton->Text = L"X";
-			this->QuitButton->UseVisualStyleBackColor = false;
-			this->QuitButton->Click += gcnew System::EventHandler(this, &MainWindow::QuitButton_Click);
-			// 
 			// MainWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -193,6 +194,7 @@ namespace DnDHelper {
 			this->Controls->Add(this->PlayerButton);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MainWindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MainWindow";

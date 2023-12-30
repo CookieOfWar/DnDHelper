@@ -81,8 +81,9 @@ namespace DnDHelper {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(DMWindow::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->FightGV = (gcnew System::Windows::Forms::DataGridView());
@@ -152,18 +153,18 @@ namespace DnDHelper {
 			// Column1
 			// 
 			this->Column1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::None;
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::Color::Black;
-			this->Column1->DefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::Color::Black;
+			this->Column1->DefaultCellStyle = dataGridViewCellStyle3;
 			this->Column1->HeaderText = L"Èìÿ";
 			this->Column1->Name = L"Column1";
 			this->Column1->Width = 200;
 			// 
 			// Column2
 			// 
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::White;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::Color::Black;
-			this->Column2->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::White;
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::Color::Black;
+			this->Column2->DefaultCellStyle = dataGridViewCellStyle4;
 			this->Column2->HeaderText = L"ÕÏ";
 			this->Column2->Name = L"Column2";
 			// 
@@ -243,6 +244,7 @@ namespace DnDHelper {
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"DMWindow";
 			this->Text = L"DMWindow";

@@ -137,6 +137,7 @@
     <ClInclude Include="MainWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CharacterSheet.resx">
@@ -149,6 +150,12 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DnDHelper.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
