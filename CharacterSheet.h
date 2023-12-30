@@ -171,6 +171,16 @@ private: System::Windows::Forms::TextBox^ Notes;
 
 
 
+
+
+
+
+
+
+
+
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -1521,9 +1531,9 @@ private: System::Windows::Forms::TextBox^ Notes;
 	}
 	private: System::Void showOrNotNotes_Tick(System::Object^ sender, System::EventArgs^ e) {
 		if (animforward)
-			this->Width = this->Width + 8;
+			this->Width = this->Width + 32;
 		else
-			this->Width = this->Width - 8;
+			this->Width = this->Width - 32;
 		if (this->Width >= 1000 || this->Width <= 608) {
 			animforward = !animforward;
 			showOrNotNotes->Stop();

@@ -80,6 +80,7 @@ System::Void DnDHelper::CharacterSheet::downloadButton_Click(System::Object^ sen
 		goldC->Text = rd->ReadLine();
 		platinumC->Text = rd->ReadLine();
 		Notes->Text = rd->ReadToEnd();
+		rd->Close();
 	}
 	return System::Void();
 }

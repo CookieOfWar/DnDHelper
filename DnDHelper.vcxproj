@@ -124,10 +124,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CharacterSheet.cpp" />
+    <ClCompile Include="DMWindow.cpp" />
     <ClCompile Include="MainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CharacterSheet.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="DMWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MainWindow.h">
@@ -138,6 +142,9 @@
     <EmbeddedResource Include="CharacterSheet.resx">
       <DependentUpon>CharacterSheet.h</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMWindow.resx">
+      <DependentUpon>DMWindow.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.h</DependentUpon>
