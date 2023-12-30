@@ -1,1 +1,1 @@
-# .rar файл по ссылке https://github.com/CookieOfWar/DnDHelper/releases/tag/v1
+# Сборка в .rar файле находится во вкладке релизов, в правой части сайта
